@@ -128,7 +128,8 @@ class GraphQLClientMojo: AbstractMojo() {
         }
 
         val compiler = GraphQLCompiler()
-        compiler.write(GraphQLCompiler.Arguments(schema, outputDirectory, mapOf(), NullableValueType.JAVA_OPTIONAL, true, true))
+        compiler.write(GraphQLCompiler.Arguments(schema, outputDirectory, mapOf(), NullableValueType.JAVA_OPTIONAL,
+                true, true, true, basePackage))
 
         if(addSourceRoot == true) {
             project.addCompileSourceRoot(outputDirectory.absolutePath)
